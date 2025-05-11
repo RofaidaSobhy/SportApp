@@ -17,6 +17,10 @@
 		22A711262DCF8C7800A20BD2 /* SportAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A711252DCF8C7800A20BD2 /* SportAppTests.swift */; };
 		22A711302DCF8C7800A20BD2 /* SportAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A7112F2DCF8C7800A20BD2 /* SportAppUITests.swift */; };
 		22A711322DCF8C7800A20BD2 /* SportAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A711312DCF8C7800A20BD2 /* SportAppUITestsLaunchTests.swift */; };
+		D1BA03262DD1272100F15776 /* spalsh.json in Resources */ = {isa = PBXBuildFile; fileRef = D1BA03252DD1272100F15776 /* spalsh.json */; };
+		D1BA03282DD129DD00F15776 /* SpalshViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BA03272DD129DD00F15776 /* SpalshViewController.swift */; };
+		D1BA032A2DD12AE000F15776 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = D1BA03292DD12AE000F15776 /* Lottie */; };
+		D1BA032E2DD12E4300F15776 /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = D1BA032D2DD12E4300F15776 /* splash.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,9 @@
 		22A7112B2DCF8C7800A20BD2 /* SportAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22A7112F2DCF8C7800A20BD2 /* SportAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportAppUITests.swift; sourceTree = "<group>"; };
 		22A711312DCF8C7800A20BD2 /* SportAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D1BA03252DD1272100F15776 /* spalsh.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = spalsh.json; sourceTree = "<group>"; };
+		D1BA03272DD129DD00F15776 /* SpalshViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpalshViewController.swift; sourceTree = "<group>"; };
+		D1BA032D2DD12E4300F15776 /* splash.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = splash.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1BA032A2DD12AE000F15776 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +109,7 @@
 		22A7110A2DCF8C7600A20BD2 /* SportApp */ = {
 			isa = PBXGroup;
 			children = (
+				D1BA03242DD126C200F15776 /* Support File */,
 				22A7110B2DCF8C7600A20BD2 /* AppDelegate.swift */,
 				22A7110D2DCF8C7600A20BD2 /* SceneDelegate.swift */,
 				22A7110F2DCF8C7600A20BD2 /* ViewController.swift */,
@@ -109,6 +118,7 @@
 				22A711192DCF8C7800A20BD2 /* LaunchScreen.storyboard */,
 				22A7111C2DCF8C7800A20BD2 /* Info.plist */,
 				22A711142DCF8C7600A20BD2 /* SportApp.xcdatamodeld */,
+				D1BA03272DD129DD00F15776 /* SpalshViewController.swift */,
 			);
 			path = SportApp;
 			sourceTree = "<group>";
@@ -128,6 +138,15 @@
 				22A711312DCF8C7800A20BD2 /* SportAppUITestsLaunchTests.swift */,
 			);
 			path = SportAppUITests;
+			sourceTree = "<group>";
+		};
+		D1BA03242DD126C200F15776 /* Support File */ = {
+			isa = PBXGroup;
+			children = (
+				D1BA03252DD1272100F15776 /* spalsh.json */,
+				D1BA032D2DD12E4300F15776 /* splash.json */,
+			);
+			path = "Support File";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,6 +237,9 @@
 				Base,
 			);
 			mainGroup = 22A710FF2DCF8C7600A20BD2;
+			packageReferences = (
+				D1BA03232DD1269C00F15776 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 22A711092DCF8C7600A20BD2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -236,7 +258,9 @@
 			files = (
 				22A7111B2DCF8C7800A20BD2 /* LaunchScreen.storyboard in Resources */,
 				22A711182DCF8C7800A20BD2 /* Assets.xcassets in Resources */,
+				D1BA03262DD1272100F15776 /* spalsh.json in Resources */,
 				22A711132DCF8C7600A20BD2 /* Main.storyboard in Resources */,
+				D1BA032E2DD12E4300F15776 /* splash.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1BA03282DD129DD00F15776 /* SpalshViewController.swift in Sources */,
 				22A711102DCF8C7600A20BD2 /* ViewController.swift in Sources */,
 				22A7110C2DCF8C7600A20BD2 /* AppDelegate.swift in Sources */,
 				22A711162DCF8C7600A20BD2 /* SportApp.xcdatamodeld in Sources */,
@@ -600,6 +625,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D1BA03232DD1269C00F15776 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = exactVersion;
+				version = 4.4.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D1BA03292DD12AE000F15776 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D1BA03232DD1269C00F15776 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		22A711142DCF8C7600A20BD2 /* SportApp.xcdatamodeld */ = {
