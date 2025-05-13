@@ -46,6 +46,7 @@ class UIPageViViewController: UIPageViewController
         guard let viewControllerIndex = arr.firstIndex(of:viewController) else { return nil }
         let afterIndex = viewControllerIndex+1
         guard afterIndex < arr.count else {
+            /// navigate to anthor home screen
             return nil
         }
         
