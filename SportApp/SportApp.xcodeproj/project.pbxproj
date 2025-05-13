@@ -3,13 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		22A7110C2DCF8C7600A20BD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A7110B2DCF8C7600A20BD2 /* AppDelegate.swift */; };
-		22A7110E2DCF8C7600A20BD2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A7110D2DCF8C7600A20BD2 /* SceneDelegate.swift */; };
-		22A711102DCF8C7600A20BD2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A7110F2DCF8C7600A20BD2 /* ViewController.swift */; };
 		22A711132DCF8C7600A20BD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22A711112DCF8C7600A20BD2 /* Main.storyboard */; };
 		22A711162DCF8C7600A20BD2 /* SportApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22A711142DCF8C7600A20BD2 /* SportApp.xcdatamodeld */; };
 		22A711182DCF8C7800A20BD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22A711172DCF8C7800A20BD2 /* Assets.xcassets */; };
@@ -18,9 +15,12 @@
 		22A711302DCF8C7800A20BD2 /* SportAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A7112F2DCF8C7800A20BD2 /* SportAppUITests.swift */; };
 		22A711322DCF8C7800A20BD2 /* SportAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A711312DCF8C7800A20BD2 /* SportAppUITestsLaunchTests.swift */; };
 		D1BA03262DD1272100F15776 /* spalsh.json in Resources */ = {isa = PBXBuildFile; fileRef = D1BA03252DD1272100F15776 /* spalsh.json */; };
-		D1BA03282DD129DD00F15776 /* SpalshViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BA03272DD129DD00F15776 /* SpalshViewController.swift */; };
 		D1BA032A2DD12AE000F15776 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = D1BA03292DD12AE000F15776 /* Lottie */; };
 		D1BA032E2DD12E4300F15776 /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = D1BA032D2DD12E4300F15776 /* splash.json */; };
+		D1E4516C2DD2672C005F34BE /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = D1E4516B2DD2672C005F34BE /* SDWebImage */; };
+		D1E451712DD27A6A005F34BE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D1E451702DD27A6A005F34BE /* Alamofire */; };
+		D1E451752DD27F33005F34BE /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = D1E451742DD27F33005F34BE /* SDWebImage */; };
+		D1E451792DD27F7A005F34BE /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = D1E451782DD27F7A005F34BE /* Lottie */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,9 +42,6 @@
 
 /* Begin PBXFileReference section */
 		22A711082DCF8C7600A20BD2 /* SportApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		22A7110B2DCF8C7600A20BD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		22A7110D2DCF8C7600A20BD2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		22A7110F2DCF8C7600A20BD2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		22A711122DCF8C7600A20BD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		22A711152DCF8C7600A20BD2 /* SportApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SportApp.xcdatamodel; sourceTree = "<group>"; };
 		22A711172DCF8C7800A20BD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,16 +53,26 @@
 		22A7112F2DCF8C7800A20BD2 /* SportAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportAppUITests.swift; sourceTree = "<group>"; };
 		22A711312DCF8C7800A20BD2 /* SportAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D1BA03252DD1272100F15776 /* spalsh.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = spalsh.json; sourceTree = "<group>"; };
-		D1BA03272DD129DD00F15776 /* SpalshViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpalshViewController.swift; sourceTree = "<group>"; };
 		D1BA032D2DD12E4300F15776 /* splash.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = splash.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		D1E4526E2DD37F4B005F34BE /* App */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = App; sourceTree = "<group>"; };
+		D1E4526F2DD37F7C005F34BE /* Leagues */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Leagues; sourceTree = "<group>"; };
+		D1E452722DD37FD7005F34BE /* model */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = model; sourceTree = "<group>"; };
+		D1E452732DD37FF9005F34BE /* onboardingScreen */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = onboardingScreen; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		22A711052DCF8C7600A20BD2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1E451752DD27F33005F34BE /* SDWebImage in Frameworks */,
+				D1E4516C2DD2672C005F34BE /* SDWebImage in Frameworks */,
+				D1E451712DD27A6A005F34BE /* Alamofire in Frameworks */,
 				D1BA032A2DD12AE000F15776 /* Lottie in Frameworks */,
+				D1E451792DD27F7A005F34BE /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,16 +116,15 @@
 		22A7110A2DCF8C7600A20BD2 /* SportApp */ = {
 			isa = PBXGroup;
 			children = (
+				D1E452732DD37FF9005F34BE /* onboardingScreen */,
+				D1E452722DD37FD7005F34BE /* model */,
+				D1E4526F2DD37F7C005F34BE /* Leagues */,
+				D1E4526E2DD37F4B005F34BE /* App */,
 				D1BA03242DD126C200F15776 /* Support File */,
-				22A7110B2DCF8C7600A20BD2 /* AppDelegate.swift */,
-				22A7110D2DCF8C7600A20BD2 /* SceneDelegate.swift */,
-				22A7110F2DCF8C7600A20BD2 /* ViewController.swift */,
 				22A711112DCF8C7600A20BD2 /* Main.storyboard */,
-				22A711172DCF8C7800A20BD2 /* Assets.xcassets */,
 				22A711192DCF8C7800A20BD2 /* LaunchScreen.storyboard */,
 				22A7111C2DCF8C7800A20BD2 /* Info.plist */,
 				22A711142DCF8C7600A20BD2 /* SportApp.xcdatamodeld */,
-				D1BA03272DD129DD00F15776 /* SpalshViewController.swift */,
 			);
 			path = SportApp;
 			sourceTree = "<group>";
@@ -143,6 +149,7 @@
 		D1BA03242DD126C200F15776 /* Support File */ = {
 			isa = PBXGroup;
 			children = (
+				22A711172DCF8C7800A20BD2 /* Assets.xcassets */,
 				D1BA03252DD1272100F15776 /* spalsh.json */,
 				D1BA032D2DD12E4300F15776 /* splash.json */,
 			);
@@ -163,6 +170,12 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				D1E4526E2DD37F4B005F34BE /* App */,
+				D1E4526F2DD37F7C005F34BE /* Leagues */,
+				D1E452722DD37FD7005F34BE /* model */,
+				D1E452732DD37FF9005F34BE /* onboardingScreen */,
 			);
 			name = SportApp;
 			productName = SportApp;
@@ -239,6 +252,8 @@
 			mainGroup = 22A710FF2DCF8C7600A20BD2;
 			packageReferences = (
 				D1BA03232DD1269C00F15776 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				D1E4516A2DD2672C005F34BE /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				D1E4516F2DD27A6A005F34BE /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 22A711092DCF8C7600A20BD2 /* Products */;
 			projectDirPath = "";
@@ -285,11 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1BA03282DD129DD00F15776 /* SpalshViewController.swift in Sources */,
-				22A711102DCF8C7600A20BD2 /* ViewController.swift in Sources */,
-				22A7110C2DCF8C7600A20BD2 /* AppDelegate.swift in Sources */,
 				22A711162DCF8C7600A20BD2 /* SportApp.xcdatamodeld in Sources */,
-				22A7110E2DCF8C7600A20BD2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -635,10 +646,46 @@
 				version = 4.4.3;
 			};
 		};
+		D1E4516A2DD2672C005F34BE /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.21.0;
+			};
+		};
+		D1E4516F2DD27A6A005F34BE /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		D1BA03292DD12AE000F15776 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D1BA03232DD1269C00F15776 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+		D1E4516B2DD2672C005F34BE /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D1E4516A2DD2672C005F34BE /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		D1E451702DD27A6A005F34BE /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D1E4516F2DD27A6A005F34BE /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		D1E451742DD27F33005F34BE /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D1E4516A2DD2672C005F34BE /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		D1E451782DD27F7A005F34BE /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D1BA03232DD1269C00F15776 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
