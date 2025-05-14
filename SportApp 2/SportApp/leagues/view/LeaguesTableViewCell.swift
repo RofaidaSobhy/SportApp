@@ -5,6 +5,7 @@ class LeaguesTableViewCell: UITableViewCell {
     @IBOutlet weak var myLabel: UILabel!
     @IBOutlet weak var myImage: UIImageView!
 
+    @IBOutlet weak var favButton: UIButton!
     private let roundedBackgroundView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false

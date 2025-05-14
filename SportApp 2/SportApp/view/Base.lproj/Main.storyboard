@@ -143,7 +143,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6RW-oZ-UfE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1244" y="1"/>
+            <point key="canvasLocation" x="737" y="19"/>
         </scene>
         <!--Page Vi View Controller-->
         <scene sceneID="Sno-8T-AHn">
@@ -153,7 +153,7 @@
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bny-O6-Q8T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-378" y="1"/>
+            <point key="canvasLocation" x="1410" y="18"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fLM-b4-V8q">
@@ -166,7 +166,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="6Nh-qG-kBu" kind="relationship" relationship="rootViewController" id="Wke-jp-QeH"/>
+                        <segue destination="5VE-zK-UY4" kind="relationship" relationship="rootViewController" id="nZR-9u-o0r"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AXs-EE-Ulg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -211,17 +211,30 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nxh-S3-1mx">
+                                                    <rect key="frame" x="314" y="32.666666666666664" width="35" height="34.999999999999993"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="Nxh-S3-1mx" secondAttribute="height" multiplier="1:1" id="KUz-ez-uYH"/>
+                                                    </constraints>
+                                                    <color key="tintColor" systemColor="systemOrangeColor"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="waQ-i8-gHY" secondAttribute="trailing" constant="8" id="1HL-To-1hm"/>
                                                 <constraint firstItem="laM-Q8-MBS" firstAttribute="centerY" secondItem="wV5-kB-xOB" secondAttribute="centerY" id="3TM-Pe-XdF"/>
                                                 <constraint firstItem="laM-Q8-MBS" firstAttribute="height" secondItem="wV5-kB-xOB" secondAttribute="height" multiplier="0.5" id="9oP-dG-4TB"/>
                                                 <constraint firstItem="waQ-i8-gHY" firstAttribute="leading" secondItem="laM-Q8-MBS" secondAttribute="trailing" constant="8" id="GST-gi-PUn"/>
+                                                <constraint firstItem="Nxh-S3-1mx" firstAttribute="centerY" secondItem="wV5-kB-xOB" secondAttribute="centerY" id="MrE-Iy-sK1"/>
                                                 <constraint firstItem="waQ-i8-gHY" firstAttribute="centerY" secondItem="wV5-kB-xOB" secondAttribute="centerY" id="Rsy-LN-x0I"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Nxh-S3-1mx" secondAttribute="trailing" constant="24" id="che-Jx-LGk"/>
                                                 <constraint firstItem="laM-Q8-MBS" firstAttribute="leading" secondItem="wV5-kB-xOB" secondAttribute="leading" constant="24" id="sfu-MY-E6N"/>
+                                                <constraint firstItem="Nxh-S3-1mx" firstAttribute="height" secondItem="wV5-kB-xOB" secondAttribute="height" multiplier="0.35" id="xfk-8U-4IQ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="favButton" destination="Nxh-S3-1mx" id="0Ix-5c-DBT"/>
                                             <outlet property="myImage" destination="laM-Q8-MBS" id="Vm6-Jf-9vK"/>
                                             <outlet property="myLabel" destination="waQ-i8-gHY" id="qrE-LM-a6D"/>
                                         </connections>
@@ -249,18 +262,62 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nA4-IP-hvJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1807" y="1"/>
+            <point key="canvasLocation" x="-1176" y="1"/>
+        </scene>
+        <!--Favorite View Controller-->
+        <scene sceneID="em2-bC-fih">
+            <objects>
+                <viewController storyboardIdentifier="FavoriteViewController" id="aWK-ne-sLg" customClass="FavoriteViewController" customModule="SportApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="C7n-dV-wVm">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Z6R-QC-5v1">
+                                <rect key="frame" x="0.0" y="118" width="393" height="666"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="H9E-X8-u0d">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="47.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="H9E-X8-u0d" id="gQl-or-lXX">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="47.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="h6Q-OZ-t04"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Z6R-QC-5v1" firstAttribute="top" secondItem="h6Q-OZ-t04" secondAttribute="top" id="AJ6-OK-1Ax"/>
+                            <constraint firstItem="h6Q-OZ-t04" firstAttribute="trailing" secondItem="Z6R-QC-5v1" secondAttribute="trailing" id="CB4-Ed-BBe"/>
+                            <constraint firstItem="Z6R-QC-5v1" firstAttribute="leading" secondItem="h6Q-OZ-t04" secondAttribute="leading" id="CFD-iW-HzR"/>
+                            <constraint firstItem="h6Q-OZ-t04" firstAttribute="bottom" secondItem="Z6R-QC-5v1" secondAttribute="bottom" id="DdR-Gx-lC6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="favTableView" destination="Z6R-QC-5v1" id="sLx-T8-D74"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pKv-G8-Qfu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-269.46564885496184" y="-6.3380281690140849"/>
         </scene>
     </scenes>
     <resources>
         <image name="basketball" width="645" height="1200"/>
         <image name="cricket" width="680" height="976"/>
         <image name="football" width="736" height="1104"/>
+        <image name="heart" catalog="system" width="128" height="107"/>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

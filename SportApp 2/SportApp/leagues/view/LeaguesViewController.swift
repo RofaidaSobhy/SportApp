@@ -24,6 +24,8 @@ class LeaguesViewController: UIViewController, UITableViewDelegate, UITableViewD
         mySearchBar.delegate = self
         
         fetchLeagues(for: "football")
+        let dummy = League(id: 101, name: "Test League", logo: "https://example.com/logo.png")
+           CoreDataManager.shared.saveLeague(dummy)
     }
 
     func fetchLeagues(for sport: String) {
@@ -47,11 +49,36 @@ class LeaguesViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
 
-    // MARK: - Table View
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredLeagues.count
     }
+    @objc func toggleFavorite(_ sender: UIButton) {
+        let league = filteredLeagues[sender.tag]
+        let key = "fav_\(league.id)"
+        
+        let current = UserDefaults.standard.bool(forKey: key)
+        
+        // Save or delete from Core Data based on the current status
+        if !current {
+            CoreDataManager.shared.saveLeague(league)  // Add to Core Data
+        } else {
+            CoreDataManager.shared.deleteFavorite(Int64(league.id))  // Remove from Core Data
+        }
+               UserDefaults.standard.set(!current, forKey: key)
+        
+      myTable.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .automatic)
+        
+        if !current {
+            if let navigationController = self.navigationController {
+                if let favoriteVC = storyboard?.instantiateViewController(withIdentifier: "FavoriteViewController") as? FavoriteViewController {
+                    navigationController.pushViewController(favoriteVC, animated: true)
+                }
+            }
+        }
+    }
+
+
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? LeaguesTableViewCell else {
@@ -61,20 +88,22 @@ class LeaguesViewController: UIViewController, UITableViewDelegate, UITableViewD
         let league = filteredLeagues[indexPath.row]
         cell.myLabel.text = league.name
 
-        // Load image safely
         if let logoURL = league.logo, let url = URL(string: logoURL) {
-            cell.myImage.sd_setImage(with: url,
-                                     placeholderImage: UIImage(systemName: "photo"),
-                                     options: .continueInBackground,
-                                     completed: nil)
+            cell.myImage.sd_setImage(with: url, placeholderImage: UIImage(systemName: "photo"))
         } else {
             cell.myImage.image = UIImage(systemName: "photo")
         }
 
+        let isFavorite = UserDefaults.standard.bool(forKey: "fav_\(league.id)")
+        let favImage = isFavorite ? "heart.fill" : "heart"
+        cell.favButton.setImage(UIImage(systemName: favImage), for: .normal)
+        cell.favButton.tintColor = .orange
+        cell.favButton.tag = indexPath.row
+        cell.favButton.addTarget(self, action: #selector(toggleFavorite(_:)), for: .touchUpInside)
         return cell
+        
     }
 
-    // MARK: - Search Bar
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
@@ -87,8 +116,12 @@ class LeaguesViewController: UIViewController, UITableViewDelegate, UITableViewD
         myTable.reloadData()
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedLeague = filteredLeagues[indexPath.row]
 
-    // MARK: - Alert
+        CoreDataManager.shared.saveLeague(selectedLeague)
+        showAlert(title: "Added to Favorites", message: "\(selectedLeague.name) was added.")
+    }
 
     func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title,

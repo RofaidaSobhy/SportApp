@@ -56,6 +56,7 @@
 		D1E452532DD37227005F34BE /* leagues */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = leagues; sourceTree = "<group>"; };
 		D1E452562DD3728A005F34BE /* Onboarding */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Onboarding; sourceTree = "<group>"; };
 		D1E452572DD372DA005F34BE /* Model */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Model; sourceTree = "<group>"; };
+		D1E4530D2DD3CD74005F34BE /* Favorite */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Favorite; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +110,7 @@
 		22A7110A2DCF8C7600A20BD2 /* SportApp */ = {
 			isa = PBXGroup;
 			children = (
+				D1E4530D2DD3CD74005F34BE /* Favorite */,
 				D1E452572DD372DA005F34BE /* Model */,
 				D1E452562DD3728A005F34BE /* Onboarding */,
 				D1E452532DD37227005F34BE /* leagues */,
@@ -169,6 +171,7 @@
 				D1E452532DD37227005F34BE /* leagues */,
 				D1E452562DD3728A005F34BE /* Onboarding */,
 				D1E452572DD372DA005F34BE /* Model */,
+				D1E4530D2DD3CD74005F34BE /* Favorite */,
 			);
 			name = SportApp;
 			productName = SportApp;
