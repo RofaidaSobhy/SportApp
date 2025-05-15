@@ -15,6 +15,7 @@ protocol LeaguesViewProtocol: AnyObject {
 class LeaguesPresenter {
     weak var view: LeaguesViewProtocol?
     private var allLeagues = [League]()
+    private var filteredLeagues = [League]()
     
     func attachView(_ view: LeaguesViewProtocol) {
         self.view = view
@@ -28,7 +29,8 @@ class LeaguesPresenter {
                     self.view?.showError("Please check your internet connection or try again later.")
                 } else {
                     self.allLeagues = leagues
-                    self.view?.showLeagues(leagues)
+                    self.filteredLeagues = leagues
+                    self.view?.showLeagues(self.filteredLeagues)
                 }
             }
         }
@@ -36,16 +38,16 @@ class LeaguesPresenter {
     
     func filterLeagues(with query: String) {
         if query.isEmpty {
-            view?.showLeagues(allLeagues)
+            filteredLeagues = allLeagues
         } else {
-            let filtered = allLeagues.filter { $0.name.lowercased().contains(query.lowercased()) }
-            view?.showLeagues(filtered)
+            filteredLeagues = allLeagues.filter { $0.name.lowercased().contains(query.lowercased()) }
         }
+        view?.showLeagues(filteredLeagues)
     }
 
     func toggleFavorite(at index: Int) {
-        guard index < allLeagues.count else { return }
-        let league = allLeagues[index]
+        guard index < filteredLeagues.count else { return }
+        let league = filteredLeagues[index]
         let key = "fav_\(league.id)"
         let current = UserDefaults.standard.bool(forKey: key)
 
@@ -61,8 +63,8 @@ class LeaguesPresenter {
     }
 
     func didSelectLeague(at index: Int) {
-        guard index < allLeagues.count else { return }
-        let league = allLeagues[index]
+        guard index < filteredLeagues.count else { return }
+        let league = filteredLeagues[index]
         CoreDataManager.shared.saveLeague(league)
         view?.showSuccessMessage("\(league.name) was added.")
     }
@@ -72,11 +74,11 @@ class LeaguesPresenter {
     }
 
     func getLeague(at index: Int) -> League? {
-        guard index < allLeagues.count else { return nil }
-        return allLeagues[index]
+        guard index < filteredLeagues.count else { return nil }
+        return filteredLeagues[index]
     }
 
     func numberOfLeagues() -> Int {
-        return allLeagues.count
+        return filteredLeagues.count
     }
 }
