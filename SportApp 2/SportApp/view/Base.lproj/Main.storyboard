@@ -328,7 +328,7 @@
                             <constraint firstItem="h6Q-OZ-t04" firstAttribute="bottom" secondItem="Z6R-QC-5v1" secondAttribute="bottom" id="DdR-Gx-lC6"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Favorite" image="testCoreAnimationRenderingEngine.TwitterHeartButton-75.png" landscapeImage="testCoreAnimationRenderingEngine.TwitterHeartButton-100.png" id="1dW-9j-UZu">
+                    <tabBarItem key="tabBarItem" title="Favorite" image="heart.fill" catalog="system" id="1dW-9j-UZu">
                         <color key="badgeColor" name="orange"/>
                     </tabBarItem>
                     <connections>
@@ -421,8 +421,8 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="C7s-qy-eoA">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                        <color key="selectedImageTintColor" name="white"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="selectedImageTintColor" name="orange"/>
                     </tabBar>
                     <connections>
                         <segue destination="QNo-tG-M2k" kind="relationship" relationship="viewControllers" id="mEm-GR-ImA"/>
@@ -439,10 +439,9 @@
         <image name="cricket" width="680" height="976"/>
         <image name="football" width="736" height="1104"/>
         <image name="heart" catalog="system" width="128" height="107"/>
+        <image name="heart.fill" catalog="system" width="128" height="107"/>
         <image name="sportsFootball" width="655" height="875"/>
         <image name="sportscourt.fill" catalog="system" width="128" height="83"/>
-        <image name="testCoreAnimationRenderingEngine.TwitterHeartButton-100.png" width="60" height="60"/>
-        <image name="testCoreAnimationRenderingEngine.TwitterHeartButton-75.png" width="60" height="60"/>
         <namedColor name="black">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
