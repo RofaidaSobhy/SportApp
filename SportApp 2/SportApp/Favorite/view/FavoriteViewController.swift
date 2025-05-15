@@ -11,7 +11,6 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
         favTableView.delegate = self
         favTableView.dataSource = self
         
-        // Fetch favorites from Core Data
         favorites = CoreDataManager.shared.fetchFavorites()
         favTableView.reloadData()
     }
@@ -21,46 +20,47 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
-        let fav = favorites[indexPath.row]
-        cell.textLabel?.text = fav.name
-        
-        // Set image to circular and increase its size
-        let imageView = cell.imageView
-        if let logo = fav.logo, let url = URL(string: logo) {
-            imageView?.sd_setImage(with: url, placeholderImage: UIImage(systemName: "photo"))
-        } else {
-            imageView?.image = UIImage(systemName: "photo")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? FavoriteViewCell else {
+            return UITableViewCell()
         }
+        let fav = favorites[indexPath.row]
+
+        cell.myLabel.text = fav.name
         
-        // Make the image circular and increase size
-        imageView?.layer.cornerRadius = 30 // Adjust this value for the desired circular image size
-        imageView?.clipsToBounds = true
-        imageView?.contentMode = .scaleAspectFill
-        
-        // Set the background of the cell with rounded corners and orange color
-        cell.contentView.backgroundColor = UIColor.orange.withAlphaComponent(0.3)
-        cell.contentView.layer.cornerRadius = 12
-        cell.contentView.layer.masksToBounds = true
-        
+
+        if let logoURL = fav.logo, let url = URL(string: logoURL) {
+            cell.myImage.sd_setImage(with: url, placeholderImage: UIImage(named: "photo"))
+        } else {
+            cell.myImage.image = UIImage(named: "photo")
+        }
         return cell
     }
 
-    // Set height for rows (to increase spacing between cells)
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100  // This will increase the row height to 100
     }
 
-    // Swipe to delete
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let id = favorites[indexPath.row].id
-            CoreDataManager.shared.deleteFavorite(id)
-            favorites.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            let alert = UIAlertController(title: "Confirm Deletion", message: "Are you sure you want to delete this item from favorites?", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            
+            alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { _ in
+                let id = self.favorites[indexPath.row].id
+
+                CoreDataManager.shared.deleteFavorite(id)
+
+                UserDefaults.standard.set(false, forKey: "fav_\(id)")
+
+                self.favorites.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }))
+            
+            present(alert, animated: true, completion: nil)
         }
     }
+
 }
 
 

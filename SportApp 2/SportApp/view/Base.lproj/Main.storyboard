@@ -182,14 +182,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="ISm-q5-mqg">
-                                <rect key="frame" x="20" y="61" width="353" height="56"/>
+                                <rect key="frame" x="20" y="100" width="353" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="5VE-zK-UY4" id="jDV-ef-0Um"/>
                                 </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="g0D-g2-iWj">
-                                <rect key="frame" x="0.0" y="127" width="393" height="657"/>
+                                <rect key="frame" x="0.0" y="166" width="393" height="618"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="100" id="N7A-AP-0d1" customClass="LeaguesTableViewCell" customModule="SportApp" customModuleProvider="target">
@@ -251,7 +251,7 @@
                             <constraint firstAttribute="trailing" secondItem="ISm-q5-mqg" secondAttribute="trailing" constant="20" id="lna-qn-AaU"/>
                             <constraint firstItem="ISm-q5-mqg" firstAttribute="leading" secondItem="RbP-lz-SoR" secondAttribute="leading" constant="20" id="mRo-36-bMY"/>
                             <constraint firstItem="RHd-WR-Hpv" firstAttribute="bottom" secondItem="g0D-g2-iWj" secondAttribute="bottom" id="s2u-L1-baX"/>
-                            <constraint firstItem="ISm-q5-mqg" firstAttribute="top" secondItem="RbP-lz-SoR" secondAttribute="top" constant="61" id="t1K-1d-3ZU"/>
+                            <constraint firstItem="ISm-q5-mqg" firstAttribute="top" secondItem="RbP-lz-SoR" secondAttribute="top" constant="100" id="x0R-WY-wdO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="pdC-It-L9e"/>
@@ -276,13 +276,43 @@
                                 <rect key="frame" x="0.0" y="118" width="393" height="666"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="H9E-X8-u0d">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="47.666667938232422"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="100" id="H9E-X8-u0d" customClass="FavoriteViewCell" customModule="SportApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="H9E-X8-u0d" id="gQl-or-lXX">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="47.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Dd-2x-ibe">
+                                                    <rect key="frame" x="30" y="25" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="9Dd-2x-ibe" secondAttribute="height" multiplier="1:1" id="8hw-uV-FgG"/>
+                                                        <constraint firstAttribute="width" secondItem="9Dd-2x-ibe" secondAttribute="height" multiplier="1:1" id="Vlf-xd-z5D"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddF-cC-5aJ">
+                                                    <rect key="frame" x="88" y="39.666666666666664" width="297" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="ddF-cC-5aJ" secondAttribute="trailing" constant="8" id="20f-wL-k3d"/>
+                                                <constraint firstItem="9Dd-2x-ibe" firstAttribute="leading" secondItem="gQl-or-lXX" secondAttribute="leadingMargin" constant="24" id="BWU-Rt-c0f"/>
+                                                <constraint firstItem="9Dd-2x-ibe" firstAttribute="height" secondItem="gQl-or-lXX" secondAttribute="height" multiplier="0.5" id="GIB-0e-jqr"/>
+                                                <constraint firstItem="ddF-cC-5aJ" firstAttribute="centerY" secondItem="gQl-or-lXX" secondAttribute="centerY" id="I78-9O-nVL"/>
+                                                <constraint firstItem="9Dd-2x-ibe" firstAttribute="leading" secondItem="gQl-or-lXX" secondAttribute="leadingMargin" constant="10" id="aeb-sp-UJk"/>
+                                                <constraint firstItem="9Dd-2x-ibe" firstAttribute="centerY" secondItem="gQl-or-lXX" secondAttribute="centerY" id="e23-sJ-COw"/>
+                                                <constraint firstAttribute="trailing" secondItem="ddF-cC-5aJ" secondAttribute="trailing" constant="8" id="feb-AK-x0q"/>
+                                                <constraint firstItem="ddF-cC-5aJ" firstAttribute="leading" secondItem="9Dd-2x-ibe" secondAttribute="trailing" constant="8" id="qbv-Ru-qMi"/>
+                                                <constraint firstItem="ddF-cC-5aJ" firstAttribute="leading" secondItem="9Dd-2x-ibe" secondAttribute="trailing" constant="8" id="wJZ-ba-D9v"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="myImage" destination="9Dd-2x-ibe" id="lR4-2m-lJa"/>
+                                            <outlet property="myLabel" destination="ddF-cC-5aJ" id="t5O-hn-aOu"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

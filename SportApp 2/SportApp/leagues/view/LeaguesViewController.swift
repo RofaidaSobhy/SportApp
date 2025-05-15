@@ -24,8 +24,6 @@ class LeaguesViewController: UIViewController, UITableViewDelegate, UITableViewD
         mySearchBar.delegate = self
         
         fetchLeagues(for: "football")
-        let dummy = League(id: 101, name: "Test League", logo: "https://example.com/logo.png")
-           CoreDataManager.shared.saveLeague(dummy)
     }
 
     func fetchLeagues(for sport: String) {
@@ -89,9 +87,9 @@ class LeaguesViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.myLabel.text = league.name
 
         if let logoURL = league.logo, let url = URL(string: logoURL) {
-            cell.myImage.sd_setImage(with: url, placeholderImage: UIImage(systemName: "photo"))
+            cell.myImage.sd_setImage(with: url, placeholderImage: UIImage(named: "photo"))
         } else {
-            cell.myImage.image = UIImage(systemName: "photo")
+            cell.myImage.image = UIImage(named: "photo")
         }
 
         let isFavorite = UserDefaults.standard.bool(forKey: "fav_\(league.id)")
@@ -104,7 +102,10 @@ class LeaguesViewController: UIViewController, UITableViewDelegate, UITableViewD
         
     }
 
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        myTable.reloadData()
+    }
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
             filteredLeagues = leagues
