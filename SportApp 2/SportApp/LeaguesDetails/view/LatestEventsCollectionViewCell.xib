@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="ovu-ap-12p" userLabel="Latest Events Collection View Cell" customClass="LatestEventsCollectionViewCell" customModule="SportsApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="350" height="185"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="350" height="185"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6JG-05-2Z6">
+                        <rect key="frame" x="0.0" y="0.0" width="350" height="185"/>
+                        <color key="backgroundColor" name="orange"/>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sportsCricket" translatesAutoresizingMaskIntoConstraints="NO" id="gLp-St-Md5">
+                        <rect key="frame" x="250" y="15" width="85" height="85"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="85" id="OKG-9e-gCP"/>
+                            <constraint firstAttribute="width" constant="85" id="m4U-49-x93"/>
+                        </constraints>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sportsTennis" translatesAutoresizingMaskIntoConstraints="NO" id="ZWG-Bh-JX5">
+                        <rect key="frame" x="15" y="15" width="85" height="85"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="85" id="L6S-d4-lW5"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="85" id="PfY-QE-fC0"/>
+                            <constraint firstAttribute="width" constant="85" id="XJP-gK-xn6"/>
+                            <constraint firstAttribute="height" constant="85" id="kLj-zW-efA"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcb-Rw-P6m">
+                        <rect key="frame" x="147.33333333333334" y="15" width="55.333333333333343" height="40"/>
+                        <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="40"/>
+                        <color key="textColor" name="white"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="088-be-Ory">
+                        <rect key="frame" x="256.33333333333331" y="135" width="63.666666666666686" height="20"/>
+                        <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="20"/>
+                        <color key="textColor" name="white"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uff-f9-pJw">
+                        <rect key="frame" x="29.999999999999996" y="135" width="63.666666666666657" height="20"/>
+                        <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="20"/>
+                        <color key="textColor" name="white"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15-11-2025" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1r-Ur-I74">
+                        <rect key="frame" x="124.33333333333331" y="105" width="101.66666666666669" height="17"/>
+                        <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="17"/>
+                        <color key="textColor" name="white"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 - 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HFJ-Zm-uTt">
+                        <rect key="frame" x="149.66666666666666" y="65" width="51" height="20"/>
+                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="20"/>
+                        <color key="textColor" name="white"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hig-bF-qwp">
+                        <rect key="frame" x="146.33333333333334" y="132" width="57.666666666666657" height="20"/>
+                        <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="20"/>
+                        <color key="textColor" name="white"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="UcZ-ml-fy2"/>
+            <constraints>
+                <constraint firstItem="6JG-05-2Z6" firstAttribute="top" secondItem="ovu-ap-12p" secondAttribute="top" id="0kr-1t-S22"/>
+                <constraint firstItem="hig-bF-qwp" firstAttribute="top" secondItem="i1r-Ur-I74" secondAttribute="bottom" constant="10" id="3HK-va-55y"/>
+                <constraint firstItem="uff-f9-pJw" firstAttribute="leading" secondItem="ovu-ap-12p" secondAttribute="leading" constant="30" id="Bjx-p7-KgC"/>
+                <constraint firstItem="gcb-Rw-P6m" firstAttribute="centerX" secondItem="ovu-ap-12p" secondAttribute="centerX" id="Ckf-pi-ayv"/>
+                <constraint firstItem="i1r-Ur-I74" firstAttribute="top" secondItem="HFJ-Zm-uTt" secondAttribute="bottom" constant="20" id="KXt-ha-rOo"/>
+                <constraint firstItem="i1r-Ur-I74" firstAttribute="centerX" secondItem="ovu-ap-12p" secondAttribute="centerX" id="LIu-OQ-7w6"/>
+                <constraint firstAttribute="trailing" secondItem="6JG-05-2Z6" secondAttribute="trailing" id="V7G-6L-mKZ"/>
+                <constraint firstItem="ZWG-Bh-JX5" firstAttribute="top" secondItem="ovu-ap-12p" secondAttribute="top" constant="15" id="Xmi-r3-gQf"/>
+                <constraint firstAttribute="trailing" secondItem="088-be-Ory" secondAttribute="trailing" constant="30" id="Xz3-7d-MIQ"/>
+                <constraint firstAttribute="bottom" secondItem="088-be-Ory" secondAttribute="bottom" constant="30" id="Ydg-9c-Jvq"/>
+                <constraint firstItem="hig-bF-qwp" firstAttribute="centerX" secondItem="ovu-ap-12p" secondAttribute="centerX" id="ZAH-e8-SnM"/>
+                <constraint firstAttribute="bottom" secondItem="6JG-05-2Z6" secondAttribute="bottom" id="bN0-fc-zh6"/>
+                <constraint firstAttribute="bottom" secondItem="uff-f9-pJw" secondAttribute="bottom" constant="30" id="ffd-El-Dag"/>
+                <constraint firstItem="gLp-St-Md5" firstAttribute="top" secondItem="ovu-ap-12p" secondAttribute="top" constant="15" id="fmn-g7-Zki"/>
+                <constraint firstItem="6JG-05-2Z6" firstAttribute="leading" secondItem="ovu-ap-12p" secondAttribute="leading" id="i4g-Fm-SX8"/>
+                <constraint firstItem="gLp-St-Md5" firstAttribute="leading" secondItem="ZWG-Bh-JX5" secondAttribute="trailing" constant="150" id="mLQ-0w-F2e"/>
+                <constraint firstItem="ZWG-Bh-JX5" firstAttribute="leading" secondItem="ovu-ap-12p" secondAttribute="leading" constant="15" id="pV5-4e-hdi"/>
+                <constraint firstItem="HFJ-Zm-uTt" firstAttribute="top" secondItem="gcb-Rw-P6m" secondAttribute="bottom" constant="10" id="qQC-Qs-zbZ"/>
+                <constraint firstItem="gcb-Rw-P6m" firstAttribute="top" secondItem="ovu-ap-12p" secondAttribute="top" constant="15" id="rN4-cM-RIb"/>
+                <constraint firstItem="HFJ-Zm-uTt" firstAttribute="centerX" secondItem="ovu-ap-12p" secondAttribute="centerX" id="uJE-mn-owk"/>
+                <constraint firstAttribute="trailing" secondItem="gLp-St-Md5" secondAttribute="trailing" constant="15" id="zAV-LA-zom"/>
+            </constraints>
+            <size key="customSize" width="185" height="127"/>
+            <connections>
+                <outlet property="backGround" destination="6JG-05-2Z6" id="zid-c0-toJ"/>
+                <outlet property="logoTeam1" destination="ZWG-Bh-JX5" id="7tv-od-LwO"/>
+                <outlet property="logoTeam2" destination="gLp-St-Md5" id="NR5-rR-sXK"/>
+                <outlet property="matchDate" destination="i1r-Ur-I74" id="5j9-b1-qsS"/>
+                <outlet property="matchTime" destination="hig-bF-qwp" id="mwH-az-KbD"/>
+                <outlet property="nameTeam1" destination="uff-f9-pJw" id="XXe-Aw-ZSW"/>
+                <outlet property="nameTeam2" destination="088-be-Ory" id="xSk-De-oAg"/>
+                <outlet property="score" destination="HFJ-Zm-uTt" id="cny-h2-tpK"/>
+            </connections>
+            <point key="canvasLocation" x="421" y="-59"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="sportsCricket" width="370" height="432"/>
+        <image name="sportsTennis" width="564" height="1002"/>
+        <namedColor name="orange">
+            <color red="1" green="0.64313725490196083" blue="0.396078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

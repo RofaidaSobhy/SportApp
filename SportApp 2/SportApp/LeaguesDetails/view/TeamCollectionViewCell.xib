@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="DfM-3e-Zka" userLabel="Team Events Collection View Cell" customClass="TeamCollectionViewCell" customModule="SportsApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="250" height="185"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="250" height="185"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MSb-2h-jZO">
+                        <rect key="frame" x="0.0" y="0.0" width="250" height="185"/>
+                        <color key="backgroundColor" name="orange"/>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sportsFootball" translatesAutoresizingMaskIntoConstraints="NO" id="BiE-aO-Vaf">
+                        <rect key="frame" x="20" y="10" width="210" height="135"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BGl-mY-jub">
+                        <rect key="frame" x="0.0" y="145" width="250" height="40"/>
+                        <color key="backgroundColor" name="black"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                        <color key="textColor" name="white"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="au8-sU-r2F"/>
+            <constraints>
+                <constraint firstItem="MSb-2h-jZO" firstAttribute="leading" secondItem="DfM-3e-Zka" secondAttribute="leading" id="7wr-95-eqz"/>
+                <constraint firstAttribute="trailing" secondItem="MSb-2h-jZO" secondAttribute="trailing" id="DDN-6d-BOe"/>
+                <constraint firstAttribute="trailing" secondItem="BGl-mY-jub" secondAttribute="trailing" id="DML-Uw-MTg"/>
+                <constraint firstItem="BGl-mY-jub" firstAttribute="top" secondItem="BiE-aO-Vaf" secondAttribute="bottom" id="KGb-8W-k9z"/>
+                <constraint firstAttribute="bottom" secondItem="BGl-mY-jub" secondAttribute="bottom" id="Kts-40-axb"/>
+                <constraint firstAttribute="bottom" secondItem="BiE-aO-Vaf" secondAttribute="bottom" constant="40" id="MLB-Wg-r2b"/>
+                <constraint firstAttribute="bottom" secondItem="MSb-2h-jZO" secondAttribute="bottom" id="Or2-xb-Cxl"/>
+                <constraint firstAttribute="trailing" secondItem="BiE-aO-Vaf" secondAttribute="trailing" constant="20" id="fot-1X-tY1"/>
+                <constraint firstItem="BiE-aO-Vaf" firstAttribute="top" secondItem="DfM-3e-Zka" secondAttribute="top" constant="10" id="gX8-YQ-UAw"/>
+                <constraint firstItem="BiE-aO-Vaf" firstAttribute="leading" secondItem="DfM-3e-Zka" secondAttribute="leading" constant="20" id="rB3-Ig-EDR"/>
+                <constraint firstItem="MSb-2h-jZO" firstAttribute="top" secondItem="DfM-3e-Zka" secondAttribute="top" id="vBn-u1-Eh5"/>
+                <constraint firstItem="BGl-mY-jub" firstAttribute="leading" secondItem="DfM-3e-Zka" secondAttribute="leading" id="zrO-3C-X1Z"/>
+            </constraints>
+            <size key="customSize" width="185" height="127"/>
+            <connections>
+                <outlet property="backGround" destination="MSb-2h-jZO" id="hRH-xg-0Ew"/>
+                <outlet property="teamImage" destination="BiE-aO-Vaf" id="F7l-77-bdY"/>
+                <outlet property="teamName" destination="BGl-mY-jub" id="bbx-kB-0mR"/>
+            </connections>
+            <point key="canvasLocation" x="421" y="-59"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="sportsFootball" width="655" height="875"/>
+        <namedColor name="black">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="orange">
+            <color red="1" green="0.64313725490196083" blue="0.396078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
