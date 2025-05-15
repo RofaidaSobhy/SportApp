@@ -71,13 +71,8 @@ class LeaguesViewController: UIViewController, UITableViewDelegate, UITableViewD
         
       myTable.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .automatic)
         
-        if !current {
-            if let navigationController = self.navigationController {
-                if let favoriteVC = storyboard?.instantiateViewController(withIdentifier: "FavoriteViewController") as? FavoriteViewController {
-                    navigationController.pushViewController(favoriteVC, animated: true)
-                }
-            }
-        }
+        NotificationCenter.default.post(name: Notification.Name("FavoritesUpdated"), object: nil)
+
     }
 
 

@@ -13,8 +13,13 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
         
         favorites = CoreDataManager.shared.fetchFavorites()
         favTableView.reloadData()
-    }
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadFavorites), name: Notification.Name("FavoritesUpdated"), object: nil)
 
+    }
+    @objc func reloadFavorites() {
+        favorites = CoreDataManager.shared.fetchFavorites()
+        favTableView.reloadData()
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return favorites.count
     }
