@@ -29,7 +29,6 @@ class UIPageViViewController: UIPageViewController
         }
         setupPageControl()
 
-        // Do any additional setup after loading the view.
     }
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         guard let viewControllerIndex = arr.firstIndex(of:viewController) else { return nil }
@@ -43,16 +42,30 @@ class UIPageViViewController: UIPageViewController
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        guard let viewControllerIndex = arr.firstIndex(of:viewController) else { return nil }
-        let afterIndex = viewControllerIndex+1
-        guard afterIndex < arr.count else {
-            /// navigate to anthor home screen
+        guard let index = arr.firstIndex(of: viewController) else { return nil }
+        let nextIndex = index + 1
+
+        if nextIndex < arr.count {
+            return arr[nextIndex]
+        } else {
+            DispatchQueue.main.async {
+                self.navigateToHome()
+            }
             return nil
         }
-        
-        return arr[afterIndex]
-      
     }
+    func navigateToHome() {
+            let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+            let mainVC = UIStoryboard(name: "Main", bundle: nil)
+                .instantiateViewController(withIdentifier: "storyboard")
+            
+            if let window = windowScene?.windows.first {
+                window.rootViewController = mainVC
+                window.makeKeyAndVisible()
+            }
+        }
+        
+    
 //    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
 //        return 0;
 //    }

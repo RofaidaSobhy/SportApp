@@ -7,6 +7,7 @@ import Alamofire
 import SDWebImage
 
 class LeaguesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+    var selectedSport: String?
 
     @IBOutlet weak var mySearchBar: UISearchBar!
     @IBOutlet weak var myTable: UITableView!
@@ -23,7 +24,10 @@ class LeaguesViewController: UIViewController, UITableViewDelegate, UITableViewD
         myTable.dataSource = self
         mySearchBar.delegate = self
         
-        fetchLeagues(for: "football")
+          if let sport = selectedSport {
+              fetchLeagues(for: sport.lowercased())
+          }
+        
     }
 
     func fetchLeagues(for sport: String) {
