@@ -2,10 +2,11 @@
 import UIKit
 import SDWebImage
 
-import UIKit
-import SDWebImage
+import Lottie
 
 class LeaguesViewController: UIViewController {
+    var animationView: LottieAnimationView?
+
     @IBOutlet weak var mySearchBar: UISearchBar!
     @IBOutlet weak var myTable: UITableView!
 
@@ -14,6 +15,17 @@ class LeaguesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        animationView = LottieAnimationView(name: "loading")
+        animationView?.frame = view.bounds
+        animationView?.contentMode = .scaleAspectFit
+        animationView?.loopMode = .loop
+        animationView?.animationSpeed = 1.0
+        
+        if let animation = animationView {
+            view.addSubview(animation)
+            animation.play()
+        }
 
         myTable.delegate = self
         myTable.dataSource = self
@@ -26,6 +38,7 @@ class LeaguesViewController: UIViewController {
         }
     }
 
+
     func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title,
                                       message: message,
@@ -33,14 +46,19 @@ class LeaguesViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true)
     }
+    
 }
 
 extension LeaguesViewController: LeaguesViewProtocol {
     func showLeagues(_ leagues: [League]) {
+        animationView?.stop()
+        animationView?.removeFromSuperview()
         myTable.reloadData()
     }
 
     func showError(_ message: String) {
+        animationView?.stop()
+        animationView?.removeFromSuperview()
         showAlert(title: "Connection Error", message: message)
     }
 
@@ -90,6 +108,7 @@ extension LeaguesViewController: UITableViewDelegate, UITableViewDataSource {
     @objc func toggleFavorite(_ sender: UIButton) {
         presenter.toggleFavorite(at: sender.tag)
     }
+    
 }
 
 extension LeaguesViewController: UISearchBarDelegate {

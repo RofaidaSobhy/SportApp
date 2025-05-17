@@ -14,6 +14,7 @@
 		22A711322DCF8C7800A20BD2 /* SportAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A711312DCF8C7800A20BD2 /* SportAppUITestsLaunchTests.swift */; };
 		D175F0DF2DD625730055459A /* SportsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D175F0DC2DD625730055459A /* SportsCollectionViewCell.swift */; };
 		D175F0E02DD625730055459A /* SportsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D175F0DB2DD625730055459A /* SportsCollectionViewController.swift */; };
+		D19C3ACA2DD8F10900FB293E /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = D19C3AC92DD8F10900FB293E /* loading.json */; };
 		D1BA03262DD1272100F15776 /* spalsh.json in Resources */ = {isa = PBXBuildFile; fileRef = D1BA03252DD1272100F15776 /* spalsh.json */; };
 		D1BA032A2DD12AE000F15776 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = D1BA03292DD12AE000F15776 /* Lottie */; };
 		D1BA032E2DD12E4300F15776 /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = D1BA032D2DD12E4300F15776 /* splash.json */; };
@@ -61,6 +62,7 @@
 		22A711312DCF8C7800A20BD2 /* SportAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D175F0DB2DD625730055459A /* SportsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsCollectionViewController.swift; sourceTree = "<group>"; };
 		D175F0DC2DD625730055459A /* SportsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsCollectionViewCell.swift; sourceTree = "<group>"; };
+		D19C3AC92DD8F10900FB293E /* loading.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		D1BA03252DD1272100F15776 /* spalsh.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = spalsh.json; sourceTree = "<group>"; };
 		D1BA032D2DD12E4300F15776 /* splash.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = splash.json; sourceTree = "<group>"; };
 		D1E15CEA2DD6825E00BB5D5A /* TeamDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsViewController.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				D1BA03252DD1272100F15776 /* spalsh.json */,
 				D1BA032D2DD12E4300F15776 /* splash.json */,
 				22A711172DCF8C7800A20BD2 /* Assets.xcassets */,
+				D19C3AC92DD8F10900FB293E /* loading.json */,
 			);
 			path = "Support File";
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				D1E15D012DD6827F00BB5D5A /* UpComingEvensCollectionViewCell.xib in Resources */,
 				D1E15D022DD6827F00BB5D5A /* LatestEventsCollectionViewCell.xib in Resources */,
 				D1E15D032DD6827F00BB5D5A /* TeamCollectionViewCell.xib in Resources */,
+				D19C3ACA2DD8F10900FB293E /* loading.json in Resources */,
 				D1E15CF12DD6825E00BB5D5A /* TeamDetailsCell.xib in Resources */,
 				D1BA03262DD1272100F15776 /* spalsh.json in Resources */,
 				D1BA032E2DD12E4300F15776 /* splash.json in Resources */,
