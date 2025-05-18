@@ -13,11 +13,13 @@ class CoreDataManager {
     static let shared = CoreDataManager()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
-    func saveLeague(_ league: League) {
+    func saveLeague(_ league: League , sportType: String) {
         let fav = FavoriteLeague(context: context)
         fav.id = Int64(league.id)
         fav.name = league.name
         fav.logo = league.logo
+        fav.sportType = sportType
+        
 
         do {
             try context.save()

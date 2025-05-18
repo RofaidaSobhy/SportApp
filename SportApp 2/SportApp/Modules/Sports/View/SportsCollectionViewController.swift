@@ -67,17 +67,17 @@ extension SportsCollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        var selectedSport = ""
+        var selectedSport:SportType?
         
         switch indexPath.row {
         case 0:
-            selectedSport = "basketball"
+            selectedSport = .basketball
         case 1:
-            selectedSport = "cricket"
+            selectedSport = .cricket
         case 2:
-            selectedSport = "football"
+            selectedSport = .football
         default:
-            selectedSport = "tennis"
+            selectedSport = .tennis
         }
         
         if let leaguesVC = storyboard?.instantiateViewController(withIdentifier: "LeaguesViewController") as? LeaguesViewController {

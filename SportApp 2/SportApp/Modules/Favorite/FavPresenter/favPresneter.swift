@@ -26,12 +26,16 @@ class FavoritePresenter: FavoritePresenterProtocol {
     init(view: FavoriteViewProtocol) {
         self.view = view
     }
-
+    
     func viewDidLoad() {
         favorites = CoreDataManager.shared.fetchFavorites()
         view?.reloadData()
     }
 
+    func getLeague(at: Int ) -> FavoriteLeague{
+        return favorites[at]
+        
+    }
     func numberOfFavorites() -> Int {
         return favorites.count
     }

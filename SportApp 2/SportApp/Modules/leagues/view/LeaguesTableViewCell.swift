@@ -18,8 +18,8 @@ class LeaguesTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
+        // 1. Add background view
         contentView.insertSubview(roundedBackgroundView, at: 0)
-
         NSLayoutConstraint.activate([
             roundedBackgroundView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 4),
             roundedBackgroundView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -4),
@@ -27,22 +27,25 @@ class LeaguesTableViewCell: UITableViewCell {
             roundedBackgroundView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8)
         ])
 
+        // 2. Setup Image
         myImage.translatesAutoresizingMaskIntoConstraints = false
-        myLabel.translatesAutoresizingMaskIntoConstraints = false
-
         myImage.layer.cornerRadius = 25
         myImage.clipsToBounds = true
         myImage.contentMode = .scaleAspectFill
 
+        // 3. Setup Label
+        myLabel.translatesAutoresizingMaskIntoConstraints = false
+
+        // 4. Constraints relative to roundedBackgroundView
         NSLayoutConstraint.activate([
             myImage.widthAnchor.constraint(equalToConstant: 50),
             myImage.heightAnchor.constraint(equalToConstant: 50),
-            myImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24),
-            myImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            myImage.leadingAnchor.constraint(equalTo: roundedBackgroundView.leadingAnchor, constant: 16),
+            myImage.centerYAnchor.constraint(equalTo: roundedBackgroundView.centerYAnchor),
 
             myLabel.leadingAnchor.constraint(equalTo: myImage.trailingAnchor, constant: 12),
-            myLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            myLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
+            myLabel.trailingAnchor.constraint(equalTo: roundedBackgroundView.trailingAnchor, constant: -16),
+            myLabel.centerYAnchor.constraint(equalTo: roundedBackgroundView.centerYAnchor)
         ])
     }
 

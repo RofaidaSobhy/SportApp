@@ -10,7 +10,7 @@ class LeaguesViewController: UIViewController {
     @IBOutlet weak var mySearchBar: UISearchBar!
     @IBOutlet weak var myTable: UITableView!
 
-    var selectedSport: String?
+    var selectedSport: SportType?
     var presenter = LeaguesPresenter()
 
     override func viewDidLoad() {
@@ -34,7 +34,7 @@ class LeaguesViewController: UIViewController {
         presenter.attachView(self)
 
         if let sport = selectedSport {
-            presenter.getLeagues(for: sport.lowercased())
+            presenter.getLeagues(for: sport.rawValue)
         }
     }
 
@@ -102,11 +102,17 @@ extension LeaguesViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter.didSelectLeague(at: indexPath.row)
-    }
+        let league : League=presenter.getLeague(at: indexPath.row)!
+        
+        if let leaguesDetailsVC = storyboard?.instantiateViewController(withIdentifier: "LeaguesDetails") as? LeaguesDetailsCollectionViewController {
+            leaguesDetailsVC.leagueId = String(league.id)
+            leaguesDetailsVC.leagueName = league.name
+            leaguesDetailsVC.sport = selectedSport
+            navigationController?.pushViewController(leaguesDetailsVC, animated: true)
+        }}
 
     @objc func toggleFavorite(_ sender: UIButton) {
-        presenter.toggleFavorite(at: sender.tag)
+        presenter.toggleFavorite(at: sender.tag,sportType: selectedSport?.rawValue ?? "football")
     }
     
 }

@@ -49,6 +49,26 @@ extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource {
         return 100
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let favLeague :FavoriteLeague = presenter.favorite(at: indexPath.row)
+                
+                if let leaguesDetailsVC = storyboard?.instantiateViewController(withIdentifier: "LeaguesDetails") as? LeaguesDetailsCollectionViewController {
+                    leaguesDetailsVC.leagueId = String(favLeague.id)
+                    leaguesDetailsVC.leagueName = favLeague.name
+                switch favLeague.sportType {
+                case "football" :
+                        leaguesDetailsVC.sport = .football
+                case "cricket" :
+                        leaguesDetailsVC.sport = .cricket
+                case "tennis" :
+                        leaguesDetailsVC.sport = .tennis
+                    default:
+                        break
+                    }
+                    
+                    navigationController?.pushViewController(leaguesDetailsVC, animated: true)
+                }}
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let alert = UIAlertController(title: "Confirm Deletion", message: "Are you sure you want to delete this item from favorites?", preferredStyle: .alert)

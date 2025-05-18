@@ -17,6 +17,7 @@ class LeaguesPresenter {
     private var allLeagues = [League]()
     private var filteredLeagues = [League]()
     
+    
     func attachView(_ view: LeaguesViewProtocol) {
         self.view = view
     }
@@ -45,14 +46,14 @@ class LeaguesPresenter {
         view?.showLeagues(filteredLeagues)
     }
 
-    func toggleFavorite(at index: Int) {
+    func toggleFavorite(at index: Int,sportType:String) {
         guard index < filteredLeagues.count else { return }
         let league = filteredLeagues[index]
         let key = "fav_\(league.id)"
         let current = UserDefaults.standard.bool(forKey: key)
 
         if !current {
-            CoreDataManager.shared.saveLeague(league)
+            CoreDataManager.shared.saveLeague(league,sportType:sportType)
         } else {
             CoreDataManager.shared.deleteFavorite(Int64(league.id))
         }
@@ -62,10 +63,10 @@ class LeaguesPresenter {
         NotificationCenter.default.post(name: Notification.Name("FavoritesUpdated"), object: nil)
     }
 
-    func didSelectLeague(at index: Int) {
+    func didSelectLeague(at index: Int,sportType:String) {
         guard index < filteredLeagues.count else { return }
         let league = filteredLeagues[index]
-        CoreDataManager.shared.saveLeague(league)
+        CoreDataManager.shared.saveLeague(league,sportType: sportType)
         view?.showSuccessMessage("\(league.name) was added.")
     }
 

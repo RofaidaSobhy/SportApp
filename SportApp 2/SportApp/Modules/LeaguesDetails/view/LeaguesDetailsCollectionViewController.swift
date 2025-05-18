@@ -41,10 +41,10 @@ class LeaguesDetailsCollectionViewController: UICollectionViewController, UIColl
     var sport : SportType?
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        leagueId = "5"
-        leagueName = "leagueName"
-        sport = .football
+//        
+//        leagueId = "5"
+//        leagueName = "leagueName"
+//        sport = .football
         
         
         leaguesDetailsPresenter.attachView(myViewController: self)

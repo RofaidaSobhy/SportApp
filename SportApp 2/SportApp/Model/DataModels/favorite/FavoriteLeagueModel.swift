@@ -10,4 +10,5 @@ struct FavoriteLeagueModel {
     let id: Int64
     let name: String
     let logo: String?
+    let sportType: String?
 }

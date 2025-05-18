@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tYC-Uf-Wu1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RS6-Qd-TTT">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -266,7 +266,7 @@
             </objects>
             <point key="canvasLocation" x="456" y="-1814"/>
         </scene>
-        <!--Favorite-->
+        <!--Favorite View Controller-->
         <scene sceneID="em2-bC-fih">
             <objects>
                 <viewController storyboardIdentifier="FavoriteViewController" id="aWK-ne-sLg" customClass="FavoriteViewController" customModule="SportApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -275,7 +275,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Z6R-QC-5v1">
-                                <rect key="frame" x="0.0" y="118" width="393" height="617"/>
+                                <rect key="frame" x="0.0" y="162" width="393" height="573"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="100" id="H9E-X8-u0d" customClass="FavoriteViewCell" customModule="SportApp" customModuleProvider="target">
@@ -328,16 +328,14 @@
                             <constraint firstItem="h6Q-OZ-t04" firstAttribute="bottom" secondItem="Z6R-QC-5v1" secondAttribute="bottom" id="DdR-Gx-lC6"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Favorite" image="heart.fill" catalog="system" id="1dW-9j-UZu">
-                        <color key="badgeColor" name="orange"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="Hjp-iF-kkz"/>
                     <connections>
                         <outlet property="favTableView" destination="Z6R-QC-5v1" id="sLx-T8-D74"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pKv-G8-Qfu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1981" y="611"/>
+            <point key="canvasLocation" x="2907.6335877862593" y="610.56338028169012"/>
         </scene>
         <!--Sports-->
         <scene sceneID="OpN-PK-4xq">
@@ -397,6 +395,7 @@
         <!--Item-->
         <scene sceneID="hlH-2q-RZ7">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P1b-5R-zde" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QNo-tG-M2k" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="ehD-4L-Ph9"/>
                     <toolbarItems/>
@@ -409,7 +408,6 @@
                         <segue destination="jZM-69-MLB" kind="relationship" relationship="rootViewController" id="vHE-ss-2DE"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="P1b-5R-zde" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2578" y="-80"/>
         </scene>
@@ -426,7 +424,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="QNo-tG-M2k" kind="relationship" relationship="viewControllers" id="mEm-GR-ImA"/>
-                        <segue destination="aWK-ne-sLg" kind="relationship" relationship="viewControllers" id="EgW-Ob-O86"/>
+                        <segue destination="bgV-0H-3mA" kind="relationship" relationship="viewControllers" id="EgW-Ob-O86"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xff-hY-S06" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -436,7 +434,7 @@
         <!--Leagues Details Collection View Controller-->
         <scene sceneID="jDe-RV-kEc">
             <objects>
-                <collectionViewController id="PaW-Zh-DpU" customClass="LeaguesDetailsCollectionViewController" customModule="SportsApp" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="LeaguesDetails" id="PaW-Zh-DpU" customClass="LeaguesDetailsCollectionViewController" customModule="SportsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="8lg-ha-AKb">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -467,25 +465,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ssH-ws-Zh5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5064.8854961832058" y="-31.690140845070424"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="L3Q-qs-8Kg">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tYC-Uf-Wu1" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eU9-He-rRC">
-                        <rect key="frame" x="0.0" y="118" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="PaW-Zh-DpU" kind="relationship" relationship="rootViewController" id="nad-mE-dVk"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HeO-lp-65G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4138.1679389312976" y="-31.690140845070424"/>
+            <point key="canvasLocation" x="5991.6030534351139" y="-31.690140845070424"/>
         </scene>
         <!--Team Details View Controller-->
         <scene sceneID="sxk-Mg-3UW">
@@ -545,7 +525,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bCh-dF-Afm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5936.6412213740459" y="-32.394366197183103"/>
+            <point key="canvasLocation" x="6863.3587786259541" y="-32.394366197183103"/>
+        </scene>
+        <!--Favorite-->
+        <scene sceneID="Sm3-oG-jFQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bgV-0H-3mA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favorite" image="heart.fill" catalog="system" id="1dW-9j-UZu">
+                        <color key="badgeColor" name="orange"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8pM-w9-5cU">
+                        <rect key="frame" x="0.0" y="118" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="aWK-ne-sLg" kind="relationship" relationship="rootViewController" id="ng8-ZD-wmi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dEc-LQ-1xI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1980.916030534351" y="610.56338028169012"/>
         </scene>
     </scenes>
     <resources>
