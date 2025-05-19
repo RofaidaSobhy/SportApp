@@ -74,6 +74,7 @@ class LeaguesDetailsPresenter {
         ) { [weak self] res in
             guard let result = res else { return }
             DispatchQueue.main.async {
+                self?.vc?.hideLoadingAnimation()
                 self?.vc?.renderLeaguesDetailsBasketballToView(result: result)
             }
         }

@@ -1,34 +1,36 @@
-//
-//  TeamDetailsViewController.swift
-//  SportsApp
-//
-//  Created by Macos on 15/05/2025.
-//
-
 import UIKit
 import Kingfisher
+import Lottie
 
 class TeamDetailsViewController: UIViewController {
 
-    
+    var animationView: LottieAnimationView?
+
     // MARK: - Outlets
     @IBOutlet weak var teamMembers: UITableView!
     @IBOutlet weak var ImageTeam: UIImageView!
     @IBOutlet weak var nameTeam: UILabel!
 
     // MARK: - Variables
-    
-    var teamData : TeamData?
+    var teamData: TeamData?
+
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
         setupNavigationBar()
+        showLoadingAnimation()
         
         nameTeam.text = teamData?.teamName
         
-        if let urlTeamLogo = URL(string: teamData?.teamLogo ?? ""){
-            ImageTeam.kf.setImage(with: urlTeamLogo ,placeholder: UIImage(named: "1"))
+        if let urlTeamLogo = URL(string: teamData?.teamLogo ?? "") {
+            ImageTeam.kf.setImage(with: urlTeamLogo, placeholder: UIImage(named: "1")) { [weak self] _ in
+                self?.teamMembers.reloadData()
+                self?.hideLoadingAnimation()
+            }
+        } else {
+            teamMembers.reloadData()
+            hideLoadingAnimation()
         }
     }
 
@@ -40,20 +42,37 @@ class TeamDetailsViewController: UIViewController {
         teamMembers.delegate = self
         teamMembers.separatorStyle = .none
     }
+
+    private func setupNavigationBar() {
+        let customFont = UIFont.systemFont(ofSize: 24, weight: .bold)
+        let customColor = UIColor(named: "orange") ?? .orange
+        navigationController?.navigationBar.titleTextAttributes = [
+            .foregroundColor: customColor,
+            .font: customFont
+        ]
+        navigationItem.title = teamData?.teamName ?? "TeamName"
+        
+        navigationController?.navigationBar.tintColor = UIColor(named: "orange") ?? .orange
+    }
     
-
-        private func setupNavigationBar() {
-            let customFont = UIFont.systemFont(ofSize: 24, weight: .bold)
-            let customColor = UIColor(named: "orange") ?? .orange
-            navigationController?.navigationBar.titleTextAttributes = [
-                .foregroundColor: customColor,
-                .font: customFont
-            ]
-            navigationItem.title = teamData?.teamName ?? "TeamName"
-            
-            navigationController?.navigationBar.tintColor = UIColor(named: "orange") ?? .orange
+    func showLoadingAnimation() {
+        animationView = LottieAnimationView(name: "loading")
+        animationView?.frame = view.bounds
+        animationView?.contentMode = .scaleAspectFit
+        animationView?.loopMode = .loop
+        
+        if let animationView = animationView {
+            view.addSubview(animationView)
+            view.bringSubviewToFront(animationView)
+            animationView.play()
         }
-
+    }
+    
+    func hideLoadingAnimation() {
+        animationView?.stop()
+        animationView?.removeFromSuperview()
+        animationView = nil
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -71,11 +90,10 @@ extension TeamDetailsViewController: UITableViewDataSource {
         cell.backgroundColor = .clear
         
         cell.nameTeamMember.text = teamData?.players?[indexPath.section].playerName
-       
         cell.positionTeamMember.text = teamData?.players?[indexPath.section].playerType
         
-        if let urlPlayerImage = URL(string: teamData?.players?[indexPath.section].playerImage ?? ""){
-            cell.imageTeamMember.kf.setImage(with: urlPlayerImage ,placeholder: UIImage(named: "dummyPlayer"))
+        if let urlPlayerImage = URL(string: teamData?.players?[indexPath.section].playerImage ?? "") {
+            cell.imageTeamMember.kf.setImage(with: urlPlayerImage, placeholder: UIImage(named: "dummyPlayer"))
         }
         return cell
     }
@@ -93,3 +111,4 @@ extension TeamDetailsViewController: UITableViewDelegate {
         return view
     }
 }
+

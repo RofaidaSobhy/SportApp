@@ -7,8 +7,10 @@
 
 import UIKit
 import Kingfisher
+import Lottie
 
 class LeaguesDetailsCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+    var loadingAnimationView: LottieAnimationView?
 
     let sectionTitles = ["Upcoming Events", "Latest Events", "Teams"]
     
@@ -24,7 +26,8 @@ class LeaguesDetailsCollectionViewController: UICollectionViewController, UIColl
     var upComingTennisMatches : [TennisMatch]?
     var latestTennisMatches : [TennisMatch]?
     
-    
+    var isFavorite: Bool = false
+
     
     
     
@@ -45,8 +48,13 @@ class LeaguesDetailsCollectionViewController: UICollectionViewController, UIColl
 //        leagueId = "5"
 //        leagueName = "leagueName"
 //        sport = .football
+        if let id = Int64(leagueId ?? "0") {
+            let favorites = CoreDataManager.shared.fetchFavorites()
+            isFavorite = favorites.contains(where: { $0.id == id })
+            updateFavoriteButton()
+        }
         
-        
+        showLoadingAnimation()
         leaguesDetailsPresenter.attachView(myViewController: self)
         
         switch sport {
@@ -126,6 +134,23 @@ class LeaguesDetailsCollectionViewController: UICollectionViewController, UIColl
         setupNavigationBar()
         registerCellsAndHeaders()
         collectionView.setCollectionViewLayout(configureCompositionalLayout(), animated: true)
+    }
+    func showLoadingAnimation() {
+        loadingAnimationView = LottieAnimationView(name: "loading")
+        loadingAnimationView?.frame = view.bounds
+        loadingAnimationView?.contentMode = .scaleAspectFit
+        loadingAnimationView?.loopMode = .loop
+        loadingAnimationView?.play()
+        
+        if let animationView = loadingAnimationView {
+            view.addSubview(animationView)
+            view.bringSubviewToFront(animationView)
+        }
+    }
+    func hideLoadingAnimation() {
+        loadingAnimationView?.stop()
+        loadingAnimationView?.removeFromSuperview()
+        loadingAnimationView = nil
     }
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -319,6 +344,41 @@ class LeaguesDetailsCollectionViewController: UICollectionViewController, UIColl
         header.configure(text: sectionTitles[indexPath.section])
         return header
     }
+    func setupNavigationBar() {
+        updateFavoriteButton()
+    }
+    func updateFavoriteButton() {
+        let imageName = isFavorite ? "heart.fill" : "heart"
+        let favoriteButton = UIBarButtonItem(
+            image: UIImage(systemName: imageName),
+            style: .plain,
+            target: self,
+            action: #selector(favoriteButtonTapped)
+        )
+        favoriteButton.tintColor = UIColor.orange
+
+        navigationItem.rightBarButtonItem = favoriteButton
+    }
+    @objc func favoriteButtonTapped() {
+        guard let leagueId = leagueId, let id = Int64(leagueId), let leagueName = leagueName, let sport = sport else { return }
+
+        if isFavorite {
+            CoreDataManager.shared.deleteFavorite(id)
+            isFavorite = false
+            print("Removed from favorites")
+        } else {
+            let league = League(id: Int(id), name: leagueName, logo: "") //قي حطه هنا
+            CoreDataManager.shared.saveLeague(league, sportType: sport.rawValue)
+            isFavorite = true
+            print("Added to favorites")
+        }
+
+        NotificationCenter.default.post(name: Notification.Name("FavoritesUpdated"), object: nil)
+
+        updateFavoriteButton()
+    }
+
+
 }
 
 // MARK: - Layout Configuration
@@ -374,15 +434,7 @@ extension LeaguesDetailsCollectionViewController {
 
 extension LeaguesDetailsCollectionViewController {
 
-    private func setupNavigationBar() {
-        let customFont = UIFont.systemFont(ofSize: 24, weight: .bold)
-        let customColor = UIColor(named: "orange") ?? .orange
-        navigationController?.navigationBar.titleTextAttributes = [
-            .foregroundColor: customColor,
-            .font: customFont
-        ]
-        navigationItem.title = leagueName
-    }
+   
 
     private func registerCellsAndHeaders() {
         collectionView.register(SimpleHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SimpleHeaderView.reuseIdentifier)
@@ -435,6 +487,8 @@ extension LeaguesDetailsCollectionViewController {
     
     // MARK: - Football
     func renderLeaguesDetailsFootballToView(result : LeaguesDetailsFootballResponse){
+        
+        self.hideLoadingAnimation()
         let allFootballMatches = result.result ?? []
 
         // Parse and filter
@@ -458,6 +512,7 @@ extension LeaguesDetailsCollectionViewController {
     // MARK: - Cricket
     
     func renderLeaguesDetailsCricketToView(result : LeaguesDetailsCricketResponse){
+        self.hideLoadingAnimation()
         let allCricketMatches = result.result ?? []
 
         upComingCricketMatches = allCricketMatches.filter {
@@ -481,6 +536,7 @@ extension LeaguesDetailsCollectionViewController {
     // MARK: - Basketball
     
     func renderLeaguesDetailsBasketballToView(result : LeaguesDetailsBasketballResponse){
+        self.hideLoadingAnimation()
         let allBasketballMatches = result.result ?? []
 
         upComingBasketballMatches = allBasketballMatches.filter {
@@ -504,6 +560,7 @@ extension LeaguesDetailsCollectionViewController {
     // MARK: - Tennis
     
     func renderLeaguesDetailsTennisToView(result : LeaguesDetailsTennisResponse){
+        self.hideLoadingAnimation()
         let allTennisMatches = result.result ?? []
 
         upComingTennisMatches = allTennisMatches.filter {
