@@ -26,7 +26,7 @@ class TeamDetailsCell: UITableViewCell {
        }
        
        private func setupBackgourndBorder() {
-           backgroundImage.layer.borderColor = (UIColor(named: "gray") ?? UIColor.gray).cgColor
+           backgroundImage.layer.borderColor = UIColor.orange.cgColor
 
            backgroundImage.layer.borderWidth = 3.0
            backgroundImage.layer.cornerRadius = 5.0

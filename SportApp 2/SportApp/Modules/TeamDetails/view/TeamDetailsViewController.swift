@@ -45,7 +45,7 @@ class TeamDetailsViewController: UIViewController {
 
     private func setupNavigationBar() {
         let customFont = UIFont.systemFont(ofSize: 24, weight: .bold)
-        let customColor = UIColor(named: "orange") ?? .orange
+        let customColor = UIColor.orange
         navigationController?.navigationBar.titleTextAttributes = [
             .foregroundColor: customColor,
             .font: customFont

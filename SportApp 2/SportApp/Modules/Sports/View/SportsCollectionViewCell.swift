@@ -19,7 +19,7 @@ class SportsCollectionViewCell: UICollectionViewCell {
        }
        
        private func setupImageBorder() {
-           sportImage.layer.borderColor = (UIColor(named: "orange") ?? UIColor.orange).cgColor
+           sportImage.layer.borderColor = UIColor.orange.cgColor
 
            sportImage.layer.borderWidth = 3.0
            sportImage.layer.cornerRadius = 20.0

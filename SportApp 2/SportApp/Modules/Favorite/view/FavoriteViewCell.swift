@@ -16,7 +16,8 @@ class FavoriteViewCell: UITableViewCell {
     private let roundedBackgroundView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.orange.withAlphaComponent(0.3)
+        view.backgroundColor = UIColor(named: "orange")
+
         view.layer.cornerRadius = 12
         view.clipsToBounds = true
         return view

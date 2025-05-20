@@ -25,7 +25,7 @@ class TeamCollectionViewCell: UICollectionViewCell {
        }
        
        private func setupBackgroundBorder() {
-           backGround.layer.borderColor = (UIColor(named: "gray") ?? UIColor.gray).cgColor
+           backGround.layer.borderColor = UIColor.orange.cgColor
 
            backGround.layer.borderWidth = 3.0
            backGround.layer.cornerRadius = 20.0

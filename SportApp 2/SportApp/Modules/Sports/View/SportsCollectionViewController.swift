@@ -21,7 +21,7 @@ class SportsCollectionViewController: UICollectionViewController {
     extension SportsCollectionViewController {
         func setupNavigationBar() {
             let customFont = UIFont.systemFont(ofSize: 24, weight: .bold)
-            let customColor = UIColor(named: "orange") ?? UIColor.orange
+            let customColor = UIColor.orange
 
             navigationController?.navigationBar.titleTextAttributes = [
                 .foregroundColor: customColor,
