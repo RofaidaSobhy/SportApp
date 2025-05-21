@@ -29,6 +29,7 @@
 		D19C3BCE2DDA79F200FB293E /* TeamDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19C3BCA2DDA79F200FB293E /* TeamDetailsCell.swift */; };
 		D19C3BCF2DDA79F200FB293E /* TeamDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19C3BC92DDA79F200FB293E /* TeamDetailsViewController.swift */; };
 		D19C3BD02DDA79F200FB293E /* TeamDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D19C3BCB2DDA79F200FB293E /* TeamDetailsCell.xib */; };
+		D19C3D6C2DDE217000FB293E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D19C3D6A2DDE217000FB293E /* Localizable.strings */; };
 		D1BA03262DD1272100F15776 /* spalsh.json in Resources */ = {isa = PBXBuildFile; fileRef = D1BA03252DD1272100F15776 /* spalsh.json */; };
 		D1BA032A2DD12AE000F15776 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = D1BA03292DD12AE000F15776 /* Lottie */; };
 		D1BA032E2DD12E4300F15776 /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = D1BA032D2DD12E4300F15776 /* splash.json */; };
@@ -79,6 +80,8 @@
 		D19C3BC92DDA79F200FB293E /* TeamDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsViewController.swift; sourceTree = "<group>"; };
 		D19C3BCA2DDA79F200FB293E /* TeamDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsCell.swift; sourceTree = "<group>"; };
 		D19C3BCB2DDA79F200FB293E /* TeamDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamDetailsCell.xib; sourceTree = "<group>"; };
+		D19C3D6B2DDE217000FB293E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D19C3D6D2DDE217400FB293E /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D1BA03252DD1272100F15776 /* spalsh.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = spalsh.json; sourceTree = "<group>"; };
 		D1BA032D2DD12E4300F15776 /* splash.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = splash.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -152,6 +155,7 @@
 				22A7111C2DCF8C7800A20BD2 /* Info.plist */,
 				22A711142DCF8C7600A20BD2 /* SportApp.xcdatamodeld */,
 				D19C3BBF2DDA797A00FB293E /* Utils */,
+				D19C3D6A2DDE217000FB293E /* Localizable.strings */,
 			);
 			path = SportApp;
 			sourceTree = "<group>";
@@ -366,6 +370,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = 22A710FF2DCF8C7600A20BD2;
 			packageReferences = (
@@ -392,6 +397,7 @@
 			files = (
 				22A711182DCF8C7800A20BD2 /* Assets.xcassets in Resources */,
 				D19C3BD02DDA79F200FB293E /* TeamDetailsCell.xib in Resources */,
+				D19C3D6C2DDE217000FB293E /* Localizable.strings in Resources */,
 				D19C3B902DDA766800FB293E /* UpComingEvensCollectionViewCell.xib in Resources */,
 				D19C3B912DDA766800FB293E /* LatestEventsCollectionViewCell.xib in Resources */,
 				D19C3B922DDA766800FB293E /* TeamCollectionViewCell.xib in Resources */,
@@ -469,11 +475,24 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		D19C3D6A2DDE217000FB293E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D19C3D6B2DDE217000FB293E /* en */,
+				D19C3D6D2DDE217400FB293E /* ar */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		22A711332DCF8C7800A20BD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -534,6 +553,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -591,6 +611,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S3XG72L4VH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SportApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -598,6 +619,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -618,6 +640,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S3XG72L4VH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SportApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -625,6 +648,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

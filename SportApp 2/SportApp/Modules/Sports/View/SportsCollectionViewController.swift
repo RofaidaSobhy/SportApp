@@ -27,7 +27,7 @@ class SportsCollectionViewController: UICollectionViewController {
                 .foregroundColor: customColor,
                 .font: customFont
             ]
-            navigationItem.title = "Sports"
+            navigationItem.title = NSLocalizedString("Sports",   comment: "")
         }
     }
 
@@ -50,16 +50,16 @@ extension SportsCollectionViewController {
         
         switch indexPath.row {
         case 0:
-            cell.sportName.text = "Basketball"
+            cell.sportName.text = NSLocalizedString("Basketball", comment: "")
             cell.sportImage.image = UIImage(named: "sportsBasketball")
         case 1:
-            cell.sportName.text = "Cricket"
+            cell.sportName.text = NSLocalizedString("Cricket", comment: "")
             cell.sportImage.image = UIImage(named: "sportsCricket")
         case 2:
-            cell.sportName.text = "Football"
+            cell.sportName.text = NSLocalizedString( "Football", comment: "")
             cell.sportImage.image = UIImage(named: "sportsFootball")
         default:
-            cell.sportName.text = "Tennis"
+            cell.sportName.text = NSLocalizedString( "Tennis", comment: "")
             cell.sportImage.image = UIImage(named: "sportsTennis")
         }
         

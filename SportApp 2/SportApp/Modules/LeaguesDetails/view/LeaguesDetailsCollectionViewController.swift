@@ -12,8 +12,12 @@ import Lottie
 class LeaguesDetailsCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     var loadingAnimationView: LottieAnimationView?
 
-    let sectionTitles = ["Upcoming Events", "Latest Events", "Teams"]
-    
+    let sectionTitles = [
+        NSLocalizedString("Upcoming Events", comment: ""),
+        NSLocalizedString("Latest Events", comment: ""),
+        NSLocalizedString("Teams", comment: "")
+    ]
+
     var upComingFootballMatches : [FootballMatch]?
     var latestFootballMatches : [FootballMatch]?
     

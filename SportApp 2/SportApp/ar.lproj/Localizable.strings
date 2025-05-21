@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  SportApp
+
+  Created by Ayatullah Salah on 21/05/2025.
+  
+*/
+
+"Sports" = "الرياضة";
+"Cricket" = "الكريكت";
+"Basketball" = "كرة السلة";
+"Tennis" = "كرة المضرب";
+"Football" = "كرة القدم";
+"Upcoming Events" = "الأحداث القادمة";
+"Latest Events" = "أحدث الأحداث";
+"Teams" = "الفرق";

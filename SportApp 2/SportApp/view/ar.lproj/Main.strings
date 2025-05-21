@@ -1,0 +1,35 @@
+/* UITabBarItem بعنوان "Favorite" */
+"1dW-9j-UZu.title" = "المفضلة";
+
+/* UILabel بنص "Welcome to our app let's explore toghter" */
+"6Ft-I1-Qot.text" = "مرحبًا بك في تطبيقنا، هيا نستكشف معًا";
+
+/* UIButton بعنوان "Button" */
+"Nxh-S3-1mx.normalTitle" = "زر";
+
+/* UITabBarItem بعنوان "Sports" */
+"RIO-X4-b6C.title" = "الرياضة";
+
+/* UILabel بنص فارغ */
+"RIq-tt-XHA.text" = "  ";
+
+/* UILabel بنص "Let's go" */
+"VIm-Tc-ddq.text" = "هيا بنا";
+
+/* UILabel بنص "Football" */
+"YdH-lb-nsz.text" = "كرة القدم";
+
+/* UILabel بنص "Label" */
+"ddF-cC-5aJ.text" = "تسمية";
+
+/* UITabBarItem بعنوان "Item" */
+"ehD-4L-Ph9.title" = "عنصر";
+
+/* UILabel بنص "Stay focused,         stay tuned" */
+"n2Z-Ic-Hrx.text" = "ابقَ مركزًا،         وابقَ على اطلاع";
+
+/* UILabel بنص "TeamName" */
+"qG8-VL-d3m.text" = "اسم الفريق";
+
+/*
+
